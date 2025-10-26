@@ -61,7 +61,7 @@ search {
   border-bottom: 1px solid rgb(4, 4, 138);
   caret-color: black;
   flex: 2;
-  height: 13vh;
+  height: 5vh;
   padding: 0 3%;
 }
 
@@ -72,11 +72,25 @@ div a {
   background-color: rgb(207, 10, 10);
   white-space: nowrap;
   color: white;
-  height: 20vh;
+  height: 7vh;
   align-items: center;
 }
 
-search > span {
+#cross-icon {
+  font-size: small;
+  color: black;
+  display: none;
+}
+
+#search-btn {
+  background-color: rgb(21, 21, 181);
+  height: 5vh;
+  width: 5vh;
+  border: none;
+  color: white;
+}
+
+/* search > span {
   background-color: aquamarine;
   margin-left: auto;
-}
+} */
