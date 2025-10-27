@@ -6,7 +6,7 @@ body {
 
 nav {
   display: flex;
-  background-color: rgb(21, 21, 181);
+  background-color: rgb(75, 75, 198);
   justify-content: space-between;
   color: white;
 }
@@ -14,16 +14,38 @@ nav {
 .nav-left {
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
-  padding-left: 1%;
+  align-items: center;
+  padding-left: 0;
+  margin: 1vh;
+}
+
+.nav-left li,
+.nav-right li {
+  border-right: 1px solid white;
+}
+
+.nav-left li a {
+  padding-left: 1vh;
 }
 
 .nav-right {
   display: flex;
   justify-content: flex-end;
-  align-items: flex-start;
-  padding-right: 1%;
-  border: 2px;
+  align-items: center;
+  padding-right: 0;
+  border: 1px;
+  margin: 1vh 0;
+}
+
+.nav-right li a {
+  padding-left: 1vh;
+}
+
+button#add-to-cart-header {
+  background-color: rgb(75, 75, 198);
+  border: none;
+  font-size: 4vh;
+  color: white;
 }
 
 li {
@@ -89,10 +111,10 @@ div a {
   border: none;
   color: white;
 }
-/* Addinig navigation to main tag*/
 
 .container {
   display: flex;
+  align-items: flex-start;
   margin-left: 2vh;
   background-color: rgb(231, 237, 237);
 }
@@ -101,18 +123,20 @@ nav.categories {
   display: flex;
   flex-direction: column;
   background-color: rgb(231, 237, 237);
-  gap: 1vh;
+  padding-right: 1vh;
+  gap: 0.5vh;
 }
 
 .categories > a {
+  display: flex;
+  flex-direction: column;
   color: white;
+  text-transform: uppercase;
   text-decoration: none;
   text-align: center;
-  background-color: rgb(21, 21, 181);
+  background-color: rgb(75, 75, 198);
   margin: 0;
-  gap: 20px;
-  margin-bottom: 2px;
-  padding: 1vh 0;
+  padding: 1.5vh 0;
   width: 35vh;
 }
 
@@ -120,8 +144,101 @@ nav.categories {
   background-color: rgb(4, 4, 111);
 }
 
-/* Adding Product columns*/
 ul.products {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  grid-template-rows: repeat (3, minmax(20px, 1fr));
+  row-gap: 3vh;
+  margin-right: 2vh;
+  padding: 0;
+  margin-top: 0;
+}
+
+.products li {
+  margin-bottom: 2vh;
+  gap: 2vh;
+}
+
+.products li:nth-last-child(-n + 3) {
+  margin-bottom: 2.5vh;
+  row-gap: 3vh;
+}
+
+h2 {
+  background-color: rgb(75, 75, 198);
+  padding: 2vh 0;
+  color: white;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+li {
+  margin-top: 0;
+  padding-top: 0;
+  padding-left: 0;
+  border: none;
+}
+
+img {
+  height: 50%;
+  width: 100%;
+}
+
+li p {
+  text-wrap: wrap;
+  padding: 0 1vh;
+}
+
+.product-price > p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(75, 75, 198);
+  height: 8vh;
+  color: white;
+}
+
+p > button#add-to-cart {
+  background-color: rgb(4, 4, 111);
+  text-align: end;
+  border: none;
+  padding: 2vh;
+  color: white;
+  border-radius: 50%;
+}
+
+#add-to-cart:hover {
+  background-color: rgb(75, 75, 198);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(75, 75, 198);
+  gap: 13vh;
+  text-align: left;
+  padding: 3vh 0;
+}
+
+section > h2 {
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 2px solid white;
+  text-align: left;
+  padding-bottom: 0.5vh;
+  margin: 0;
+}
+
+.footer-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: rgb(75, 75, 198);
+}
+
+.footer-menu a {
+  color: white;
+  margin-top: 1vh;
+  text-decoration: none;
 }
