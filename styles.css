@@ -4,41 +4,55 @@ body {
   font-family: sans-serif;
 }
 
-nav {
+nav.nav-menu {
   display: flex;
   background-color: rgb(75, 75, 198);
   justify-content: space-between;
   color: white;
+  padding: 1vh;
+  margin: 0;
 }
 
 .nav-left {
   display: flex;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   padding-left: 0;
-  margin: 1vh;
+  margin: 0;
 }
 
 .nav-left li,
 .nav-right li {
   border-right: 1px solid white;
+  padding-bottom: 0;
 }
 
 .nav-left li a {
   padding-left: 1vh;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 1.4vw;
 }
 
 .nav-right {
   display: flex;
+  flex-direction: row;
   justify-content: flex-end;
   align-items: center;
   padding-right: 0;
   border: 1px;
-  margin: 1vh 0;
+  margin: 0;
+  font-size: 1.4vw;
 }
 
 .nav-right li a {
   padding-left: 1vh;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 1.4vw;
 }
 
 button#add-to-cart-header {
@@ -52,7 +66,7 @@ li {
   list-style-type: none;
   padding: 2%;
   white-space: nowrap;
-  border: 5px white;
+  border: 1px white;
   border-right: 1px solid white;
 }
 
@@ -62,40 +76,49 @@ li:last-of-type {
 
 .search-container {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
+  padding-right: 1rem;
 }
 
 h1 {
   color: rgb(4, 4, 138);
-  padding-left: 3%;
-  padding-right: 4%;
+  padding: 2%;
+  margin: 0;
+  font-size: 3vw;
 }
 
 search {
   display: flex;
-  align-items: center;
-  width: 80%;
+  flex: 1;
 }
 
 [name="search-input"] {
-  border: none;
+  border: 0;
   border-bottom: 1px solid rgb(4, 4, 138);
   caret-color: black;
-  flex: 2;
   height: 5vh;
   padding: 0 3%;
+  flex: 1;
+}
+
+[name="search-input"]::placeholder {
+  font-size: 1.4vw;
+  align-items: center;
 }
 
 div a {
   display: flex;
-  padding: 0 1%;
-  margin: 0 1%;
+  padding: 1% 1%;
   background-color: rgb(207, 10, 10);
   white-space: nowrap;
   color: white;
-  height: 7vh;
   align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.75vw;
 }
 
 #cross-icon {
@@ -109,6 +132,8 @@ div a {
   height: 5vh;
   width: 5vh;
   border: none;
+  font-size: 1.4vw;
+  padding-left: 0.5vw;
   color: white;
 }
 
@@ -129,6 +154,7 @@ nav.categories {
 
 .categories > a {
   display: flex;
+  flex: 2;
   flex-direction: column;
   color: white;
   text-transform: uppercase;
@@ -136,8 +162,11 @@ nav.categories {
   text-align: center;
   background-color: rgb(75, 75, 198);
   margin: 0;
-  padding: 1.5vh 0;
-  width: 35vh;
+  padding: 1.5vh 8vh;
+  text-align: start;
+  padding-left: 1vw;
+  font-size: 1.5vw;
+  text-wrap: nowrap;
 }
 
 .categories > a:hover {
@@ -155,22 +184,23 @@ ul.products {
 }
 
 .products li {
-  margin-bottom: 2vh;
-  gap: 2vh;
+  margin-bottom: 1vh;
 }
 
 .products li:nth-last-child(-n + 3) {
-  margin-bottom: 2.5vh;
-  row-gap: 3vh;
+  margin-bottom: 1.5vh;
 }
 
 h2 {
+  display: block;
   background-color: rgb(75, 75, 198);
-  padding: 2vh 0;
+  padding: 3vh 0;
   color: white;
-  text-align: center;
+  text-align: start;
+  padding-left: 2vh;
   margin-top: 0;
   margin-bottom: 0;
+  font-size: 2vw;
 }
 
 li {
@@ -181,13 +211,17 @@ li {
 }
 
 img {
-  height: 50%;
+  box-sizing: border-box;
+  height: 40%;
   width: 100%;
 }
 
 li p {
   text-wrap: wrap;
   padding: 0 1vh;
+  font-size: 1.4vw;
+  margin-top: 1.5vh;
+  margin-bottom: 4vh;
 }
 
 .product-price > p {
@@ -195,7 +229,8 @@ li p {
   justify-content: space-between;
   align-items: center;
   background-color: rgb(75, 75, 198);
-  height: 8vh;
+  margin: 0;
+  padding: 1vw 1vw;
   color: white;
 }
 
@@ -203,7 +238,8 @@ p > button#add-to-cart {
   background-color: rgb(4, 4, 111);
   text-align: end;
   border: none;
-  padding: 2vh;
+  padding: 1.5vh;
+  font-size: 1.7vw;
   color: white;
   border-radius: 50%;
 }
@@ -228,6 +264,7 @@ section > h2 {
   text-align: left;
   padding-bottom: 0.5vh;
   margin: 0;
+  font-size: 2vw;
 }
 
 .footer-menu {
@@ -241,4 +278,11 @@ section > h2 {
   color: white;
   margin-top: 1vh;
   text-decoration: none;
+  font-size: 1.25vw;
+}
+
+@media (max-width: 900px) {
+  ul.products {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
